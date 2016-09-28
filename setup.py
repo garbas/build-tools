@@ -2,9 +2,12 @@
 
 from setuptools import setup, find_packages
 
+with open('VERSION') as f:
+    version = f.read().strip()
+
 setup(
     name="buildtools",
-    version="1.0.6",
+    version=version,
     description="Mozilla RelEng Toolkit",
     author="Release Engineers",
     author_email="release@mozilla.com",
@@ -19,9 +22,9 @@ setup(
 
     install_requires=[
         'sqlalchemy',
-        'argparse',
         'Twisted==10.1.0',
         'simplejson',
+        #'argparse',
         'furl',
         'requests',
         'docopt',
